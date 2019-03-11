@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload images to server using Node JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>    
+</head>
+<body>
+    <div class="container">
+        <P> Upload and View your Excel File </P>
+        <form id="frmUploader" enctype="multipart/form-data" action="api/Upload" method="post">
+            <input type="file" name="userPhoto" multiple />
+            <input type="submit" name="submit" id="btnSubmit" value="Upload" /> 
+        </form>
+    </div>       
+<script>
+    // $(document).ready(function() {
+    //             var options = {
+    //                     beforeSubmit: showRequest, 
+    //             }
+    //         });
+</script>
+</body>
+</html>

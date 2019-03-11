@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Make a table based on JSON data.</h2>
+
+<p id="demo"></p>
+<button onclick="open_excel_file('sheet.xlsx', 's1', 'A1:Z7');">Open</button>
+<!--<script>
+var obj, dbParam, xmlhttp, myObj, x, txt = "";
+obj = "<%= name %>";
+console.log(obj);
+
+    myObj = JSON.parse(obj);
+    txt += "<table border='1'>"
+    for (x in myObj) {
+      txt += "<tr><td>" + myObj[x].name + "</td></tr>";
+    }
+    txt += "</table>"    
+    document.getElementById("demo").innerHTML = txt;
+</script>-->
+
+<script type="text/javascript">
+        function open_excel_file(path,sheet,f_range)
+          {
+            if (!window.ActiveXObject)
+            {
+              alert ("Your browser does not support this feature.Please re-open this file using IE browser.");
+              return;
+            }
+    
+            fso = new ActiveXObject("Scripting.FileSystemObject");
+    
+            if (!fso.FileExists(path))
+              alert("Cannot open file.\nFile '" + path + "' doesn't exist.");
+    
+            else
+             {
+               var myApp = new ActiveXObject("Excel.Application");
+    
+               if (myApp != null)
+                 {
+                   myApp.visible = true;
+                   Book = myApp.workbooks.open(path);
+                   var excel_sheet = Book.Worksheets(sheet).Activate;
+                   myApp.range(f_range).Select;
+                 }
+    
+               else {
+                 alert ("Cannot open Excel application");
+               }
+             }
+          }
+     </script>
+
+</body>
+</html>
